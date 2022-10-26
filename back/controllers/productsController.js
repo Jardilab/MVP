@@ -1,4 +1,5 @@
 const products = require("../models/products");
+const fetch =(url)=>import('node-fetch').then(({default:fetch})=>fetch(url)); //Usurpación del require
 
 // View All Products --> /api/products
 exports.getProducts = async (req, res, next) => {
@@ -6,15 +7,15 @@ exports.getProducts = async (req, res, next) => {
   if (!products) {
     return res.status(400).json({
       success: false,
-      error: true,
-    });
+      error: true
+    })
   }
   res.status(200).json({
     success: true,
     count: product.length,
     product,
-  });
-};
+  })
+}
 
 // =======================================================================================================
 
@@ -96,7 +97,7 @@ exports.deleteProduct = async (req, res, next) => {
   {
     res.status(200).json({
       success: true,
-      message: "Product removed successfully",
+      message: "Product removed successfully"
     });
   }
 };
@@ -106,7 +107,7 @@ exports.deleteProduct = async (req, res, next) => {
 // View All Products - FETCH
 
 function viewProducts() {
-  fetch('http://localhost:4000/api/products')
+  fetch("http://localhost:4000/api/products")
     .then(res => res.json())
     .then(res => console.log(res))
     .catch(err => console.error(err))
@@ -115,7 +116,7 @@ function viewProducts() {
 
 //View by ID
 function viewProductById(id) {
-  fetch('http://localhost:4000/api/product/' + id)
+  fetch("http://localhost:4000/api/product/" + id)
     .then(res => res.json())
     .then(res => console.log(res))
     .catch(err => console.error(err))

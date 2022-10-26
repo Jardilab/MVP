@@ -10,13 +10,13 @@ const options = {
   timeout: 3000,
   position: positions.BOTTOM_CENTER,
   transition: transitions.SCALE
-}
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <AlertProvider template={AlertTemplate} {...options}>
-    <App />
+      <App />
     </AlertProvider>
   </Provider>
 );
