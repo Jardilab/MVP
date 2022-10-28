@@ -42,7 +42,7 @@ export const Home = () => {
                         ></img>
                         <div className="card-body d-flex flex-column text-center">
                           <h5 id="title_product">
-                            <Link to={`/products/${products._id}`}>
+                            <Link to={`/product/${products._id}`}>
                               {products.name}
                             </Link>
                           </h5>
@@ -62,7 +62,7 @@ export const Home = () => {
                           </div>
                           <p className="card-text">${products.price}</p>
                           <Link
-                            to={`/products/${products._id}`}
+                            to={`/product/${products._id}`}
                             id="view_btn"
                             className="btn btn-block"
                           >

@@ -13,15 +13,15 @@ const {
 router.route("/products").get(getProducts);
 
 // Build route view products by ID
-router.route("/products/:id").get(getProductById);
+router.route("/product/:id").get(getProductById);
 
 // Build route view a new product
 router.route("/product/new").post(newProduct);
 
 // Build route update product by ID
-router.route("/products/:id").put(updateProduct);
+router.route("/product/:id").put(updateProduct);
 
 // Build route delete product by ID
-router.route("/products/:id").delete(deleteProduct);
+router.route("/product/:id").delete(deleteProduct);
 
 module.exports = router;
