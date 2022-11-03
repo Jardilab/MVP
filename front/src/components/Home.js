@@ -24,8 +24,8 @@ export const Home = () => {
         <Fragment>
           <Fragment>
             <MetaData title="Catch Me If You Can"></MetaData>
-            <h5 id="header_products">Latest products ⭐</h5>
-
+            <h5 id="header_products">Latest products </h5>
+            
             <section id="products" className="container mt-5">
               <div className="row">
                 {products &&

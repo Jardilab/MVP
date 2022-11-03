@@ -38,7 +38,7 @@ const Header = () => {
             aria-hidden="false"
           ></i>
           <span className="ml-2" id="cart_count">
-            2
+            0
           </span>
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           <i className="fa fa-sign-in fa-2x text-white" aria-hidden="true"></i>

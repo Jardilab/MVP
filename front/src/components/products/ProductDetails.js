@@ -14,7 +14,6 @@ export const ProductDetails = () => {
   const alert = useAlert();
   const [quantity, setQuantity] = useState(1)
 
-
   useEffect(() => {
     dispatch(getProductDetails(id))
     if (error) {
@@ -60,7 +59,7 @@ export const ProductDetails = () => {
 
             <div className='col-12 col-lg-5 mt-5'>
               <h5>{product.name}</h5>
-              <p id="product_id">ID the product {product._id}</p>
+              <p id="product_id">ID product: {product._id}</p>
               <hr />
 
               <div className='rating-outer'>
@@ -74,9 +73,9 @@ export const ProductDetails = () => {
                 <input type="number" className="form-control count d-inline" value={quantity} readOnly />
                 <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
               </div>
-              <button type="button" id="carrito_btn" className="btn btn-primary d-inline ml-4" disabled={product.stock === 0}>Add to 🛒</button>
+              <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.stock === 0}>Add shopping cart</button>
               <hr />
-              <p>Estado: <span id="stock_stado" className={product.stock > 0 ? 'greenColor' : 'redColor'}>{product.stock > 0 ? "Available" : "Shot out"}</span></p>
+              <p>State: <span id="stock_stado" className={product.stock > 0 ? 'greenColor' : 'redColor'}>{product.stock > 0 ? "Available" : "Shot out"}</span></p>
               <hr />
               <h5 className="mt-2">Description:</h5>
               <p>{product.description}</p>
@@ -111,7 +110,6 @@ export const ProductDetails = () => {
 
                           <button className="btn my-3 float-right review-btn px-4 text-white"
                             data-dismiss="modal" aria-label="Close">Send</button>
-
                         </div>
                       </div>
                     </div>
@@ -124,7 +122,6 @@ export const ProductDetails = () => {
         </Fragment>
       )}
     </Fragment>
-
   )
 }
 
