@@ -41,7 +41,7 @@ exports.getProductById = catchAsyncErrors(async (req, res, next) => {
 
 // Add a new product --> /api/product/new
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
-  req.body.user=req.user.id;
+  req.body.user = req.user.id;
   const product = await producto.create(req.body);
 
   res.status(201).json({
@@ -90,10 +90,10 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 
   // Validation 2: The product exists? --> YES --> Answer Option: The product has been successfully removed
   await producto.remove()
-    res.status(200).json({
-      success: true,
-      message: "Product removed successfully"
-    })
+  res.status(200).json({
+    success: true,
+    message: "Product removed successfully"
+  })
 })
 
 // =======================================================================================================
@@ -101,20 +101,20 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 // View All Products - FETCH
 
 function viewProducts() {
-    fetch("http://localhost:4000/api/products")
-      .then(res => res.json())
-      .then(res => console.log(res))
-      .catch(err => console.error(err))
+  fetch("http://localhost:4000/api/products")
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .catch(err => console.error(err))
 }
 
 //viewProducts(); Invoke the created method to test the query.
 
 //View by ID
 function viewProductById(id) {
-    fetch("http://localhost:4000/api/product/" + id)
-      .then(res => res.json())
-      .then(res => console.log(res))
-      .catch(err => console.error(err))
+  fetch("http://localhost:4000/api/product/" + id)
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .catch(err => console.error(err))
 }
 
 // //viewProductById('63456a8d9163cb9dbbcaa235'); method test

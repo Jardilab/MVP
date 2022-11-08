@@ -79,7 +79,7 @@ export const ProductDetails = () => {
               <hr />
               <h5 className="mt-2">Description:</h5>
               <p>{product.description}</p>
-              <hr />              
+              <hr />
               <button id="btn_review" type="button" className="btn btn-primary mt-4"
                 data-toggle="modal" data-target="#ratingModal">Write your review</button>
               <div className="alert alert-danger mt-5" type="alert">Login for write your review</div>
@@ -124,4 +124,3 @@ export const ProductDetails = () => {
     </Fragment>
   )
 }
-

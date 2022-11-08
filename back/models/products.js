@@ -1,41 +1,41 @@
 const mongoose = require("mongoose")
 
 const productSchema = mongoose.Schema({
-    name:{
+    name: {
         type: String,
         required: [true, "Insert product name"],
         trim: true,
         maxLength: [120, "product name limited to 120 characters"]
     },
-    price:{
-        type:Number,
+    price: {
+        type: Number,
         required: [true, "Insert product price"],
         maxLength: [7, "maximum product value limited to 7 digits"],
         default: 0.0
     },
-    description:{
+    description: {
         type: String,
         required: [true, "Insert product description"],
         maxLength: [300, "product description limited to 300 characters"],
         default: 0.0
     },
-    rating:{
+    rating: {
         type: Number,
         default: 0
     },
-    imagen:[
+    imagen: [
         {
             public_id: {
                 type: String,
-                required: true,                
+                required: true,
             },
             url: {
                 type: String,
                 required: true,
             }
-        }        
+        }
     ],
-    category:{
+    category: {
         type: String,
         required: [true, "Insert product category"],
         enum: {
@@ -46,52 +46,52 @@ const productSchema = mongoose.Schema({
             ]
         }
     },
-    role:{
+    role: {
         type: String,
         required: [true, "Insert product role_enum"],
-        enum:{
-            values:[
+        enum: {
+            values: [
                 "Administrator",
                 "Customer"
             ]
         }
     },
-    stock:{
+    stock: {
         type: Number,
         required: [true, "Insert product stock"],
         maxLength: [5, "maximum stock of products limited to 5 digits"],
         default: 0
     },
-    scoreProduct:{
+    scoreProduct: {
         type: Number,
         default: 0
     },
-    comments:[
+    comments: [
         {
-            nameCustomer:{
+            nameCustomer: {
                 type: String,
                 required: true,
             },
-            rating:{
+            rating: {
                 type: Number,
                 required: true,
             },
-            comment:{
+            comment: {
                 type: String,
                 required: true,
             }
 
         }
     ],
-    user:{
+    user: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
         required: true
     },
-    createAt:{
+    createAt: {
         type: Date,
         default: Date.now
-    }  
+    }
 })
 
-module.exports=mongoose.model("products", productSchema);
+module.exports = mongoose.model("products", productSchema);
