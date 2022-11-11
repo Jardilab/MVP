@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 import "../../App.css";
+import { Link } from "react-router-dom"
+import { Search } from './Search'
 
 const Header = () => {
   return (
@@ -13,8 +15,9 @@ const Header = () => {
             ></img>
           </div>
         </div>
-        <div className="col-12 col-md-6 mt-2 mt-md-0">
-          <div className="input-group">
+        <div className="col-12 col-md-4 mt-2 mt-md-0">
+          <Search />
+          {/* <div className="input-group">
             <input
               type="text"
               id="search_field"
@@ -29,9 +32,12 @@ const Header = () => {
                 ></i>
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
+        
+        <Link to="/login" className='btn ml-4' id="login_btn">LOGIN</Link>
+        
+        {/* <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
           <span className="ml-5"></span>
           <i
             className="fa fa-shopping-cart fa-2x text-white"
@@ -47,7 +53,7 @@ const Header = () => {
               LOGIN
             </button>
           </span>
-        </div>
+        </div> */}
       </nav>
     </Fragment>
   );
