@@ -14,7 +14,7 @@ export const Register = () => {
     const navigate = useNavigate();
     const { name, email, password } = user;
     const [avatar, setAvatar] = useState("");
-    const [avatarPreview, setAvatarPreview] = useState("https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-default-avatar-profile-icon-vector-social-media-user-image-vector-illustration-227787227.jpg")
+    const [avatarPreview, setAvatarPreview] = useState("https://imgs.search.brave.com/EqS0yK0ea5C39tMqsm3vmzxUaIA9fzkoDJSQhPZz84M/rs:fit:820:857:1/g:ce/aHR0cHM6Ly92ZWN0/b3JpZmllZC5jb20v/aW1hZ2VzL2RlZmF1/bHQtYXZhdGFyLWlj/b24tMTIucG5n")
     const alert = useAlert();
     const dispatch = useDispatch();
     const { isAuthenticated, error, loading } = useSelector(state => state.auth)

@@ -2,10 +2,14 @@ const express = require("express");
 const app = express();
 const errorMiddleware = require("./middleware/errors")
 const cookieParser = require("cookie-parser")
+const bodyParser = require('body-parser')
+const fileUpload = require('express-fileupload')
 
 // Using imported constants
 app.use(express.json());
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(fileUpload());
 
 // Import Routes
 const products = require("./routes/products");
