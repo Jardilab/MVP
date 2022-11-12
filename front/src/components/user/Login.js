@@ -42,7 +42,6 @@ export const Login = () => {
                     </div>                  
                 </div> */}
 
-
             </div>
         </Fragment>
     )

@@ -78,7 +78,7 @@ exports.createUpdateComments = catchAsyncErrors(async (req, res, next) => {
   if (isCommented) {
     product.comments.forEach(userComment => {
       if (userComment.nameCustomer === req.user.name) {
-        userComment.comment = comment,
+          userComment.comment = comment,
           userComment.rating = rating
       }
     })
@@ -87,8 +87,8 @@ exports.createUpdateComments = catchAsyncErrors(async (req, res, next) => {
     product.scoreProduct = product.comments.length
   }
 
-  product.serviceRating = product.comments.reduce((accumulator, userComment) =>
-    userComment.rating + accumulator, 0) / product.comments.length
+  product.rating = product.comments.reduce((accumulator, userComment) =>
+    userComment.serviceRating + accumulator, 0) / product.comments.length
 
   await product.save({ validateBeforeSave: false });
 
@@ -112,16 +112,16 @@ exports.getComments = catchAsyncErrors(async (req, res, next) => {
 exports.deleteComments = catchAsyncErrors(async (req, res, next) => {
   const product = await producto.findById(req.query.idProduct);
 
-  const comment = product.comment.filter(userComment =>
+  const comm = product.comment.filter(userComment =>
     userComment._id.toString() !== req.query.idReview.toString());
 
-  const scoreProduct = comment.length;
+  const scoreProduct = comm.length;
 
-  const rating = product.comment.reduce((accumulator, userComment) =>
-    userComment.rating + accumulator, 0) / comment.length;
+  const rating = product.comm.reduce((accumulator, userComment) =>
+    userComment.rating + accumulator, 0) / comm.length;
 
   await producto.findByIdAndUpdate(req.query.idProduct, {
-    comment,
+    comm,
     rating,
     scoreProduct
   }, {

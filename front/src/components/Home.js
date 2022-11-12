@@ -11,7 +11,7 @@ import Pagination from 'react-js-pagination'
 export const Home = () => {
   const params = useParams();
   const keyword = params.keyword;
-  const [price, ] = useState([100, 1000000])
+  const [price,] = useState([100, 1000000])
   // setPrice
   const [currentPage, setCurrentPage] = useState(1)
   const { loading, products, error, resPerPage, productsCount } = useSelector(state => state.products);
@@ -63,7 +63,7 @@ export const Home = () => {
                   onChange={price => setPrice(price)}
                 ></Slider> */}
                 {products &&
-                  products.map((products) => (
+                  products.map(products => (
                     <div
                       key={products._id}
                       className="col-sm-12 col-md-6 col-lg-3 my-3"
