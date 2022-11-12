@@ -7,6 +7,7 @@ import { ProductDetails } from './components/products/ProductDetails';
 //Router brought from react-router-dom (different from express)
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Login } from './components/user/Login';
+import { Register } from './components/user/Register';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/search/:keyword" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element= {<Register />} />
           </Routes>
         </div>
         <Footer />
