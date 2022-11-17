@@ -55,12 +55,10 @@ export const ProductDetails = () => {
                 ))}
               </Carousel>
             </div>
-
             <div className='col-12 col-lg-5 mt-5'>
-              <h5>{product.name}</h5>
+              <h3>{product.name}</h3>
               <p id="product_id">ID product: {product._id}</p>
               <hr />
-
               <div className='rating-outer'>
                 <div className="rating-inner" style={{ width: `${(product.rating / 5) * 100}%` }}></div>
               </div>
@@ -76,13 +74,12 @@ export const ProductDetails = () => {
               <hr />
               <p>State: <span id="stock_stado" className={product.stock > 0 ? 'greenColor' : 'redColor'}>{product.stock > 0 ? "Available" : "Shot out"}</span></p>
               <hr />
-              <h5 className="mt-2">Description:</h5>
+              <h3 className="mt-2">Description:</h3>
               <p>{product.description}</p>
               <hr />
               <button id="btn_review" type="button" className="btn btn-primary mt-4"
                 data-toggle="modal" data-target="#ratingModal">Write your review</button>
               <div className="alert alert-danger mt-5" type="alert">Login for write your review</div>
-
               {/* Message for write your review and score product */}
               <div className="row mt-2 mb-5">
                 <div className="rating w-50">
@@ -91,7 +88,7 @@ export const ProductDetails = () => {
                     <div className="modal-dialog" role="document">
                       <div className="modal-content">
                         <div className="modal-header">
-                          <h5 className="modal-title" id="ratingModalLabel">Send Review</h5>
+                          <h3 className="modal-title" id="ratingModalLabel">Send Review</h3>
                           <button type="button" className='close' data-dismiss="modal" aria-label='Close'>
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -104,15 +101,12 @@ export const ProductDetails = () => {
                             <li className="star"><i className="fa fa-star"></i></li>
                             <li className="star"><i className="fa fa-star"></i></li>
                           </ul>
-
                           <textarea name="review" id="review" className="form-control mt3"></textarea>
-
                           <button className="btn my-3 float-right review-btn px-4 text-white"
                             data-dismiss="modal" aria-label="Close">Send</button>
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
               </div>

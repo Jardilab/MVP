@@ -39,29 +39,10 @@ export const Home = () => {
         <Fragment>
           <Fragment>
             <MetaData title="Catch Me If You Can"></MetaData>
-            <h5 id="header_products">Latest products </h5>
+            <h3 id="header_products">Latest products </h3>
 
             <section id="products" className="container mt-5">
               <div className="row">
-                {/* <Slider
-                  range
-                  className='t-slider'
-                  marks={{
-                    100: `$100`,
-                    1000000: `$1000000`
-                  }}
-                  min={100}
-                  max={1000000}
-                  defaultValue={[100, 1000000]}
-                  tipFormatter={value => `$${value}`}
-                  tipProps={{
-                    placement: 'top',
-                    prefixCls: 'rc-slider-tooltip',
-                    visible: true
-                  }}
-                  value={price}
-                  onChange={price => setPrice(price)}
-                ></Slider> */}
                 {products &&
                   products.map(products => (
                     <div
@@ -75,11 +56,11 @@ export const Home = () => {
                           alt={products.imagen[0].public_id}
                         ></img>
                         <div className="card-body d-flex flex-column text-center">
-                          <h5 id="title_product">
+                          <h3 id="title_product">
                             <Link to={`/product/${products._id}`}>
                               {products.name}
                             </Link>
-                          </h5>
+                          </h3>
                           <div className="rating mt-auto">
                             <div className="rating-outer">
                               <div

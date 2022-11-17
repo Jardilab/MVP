@@ -3,6 +3,7 @@ const producto = require("../models/products");
 const APIFeatures = require("../utils/apiFeatures");
 const ErrorHandler = require("../utils/errorHandler");
 const fetch = (url) => import('node-fetch').then(({ default: fetch }) => fetch(url)); //Usurpación del require
+const cloudinary = require("cloudinary")
 
 // View All Products --> /api/products
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
@@ -49,9 +50,30 @@ exports.getProductById = catchAsyncErrors(async (req, res, next) => {
 
 // Add a new product --> /api/product/new
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
-  req.body.user = req.user.id;
-  const product = await producto.create(req.body);
+  let imagen = []
 
+  if (typeof req.body.imagen === "string") {
+    imagen.push(req.body.imagen)
+
+  } else {
+    imagen = req.body.imagen
+  }
+
+  let imagenLink = []
+
+  for (let i = 0; i < imagen.length; i++) {
+    const result = await cloudinary.v2.uploader.upload(imagen[i], {
+      folder: "products"
+    })
+    imagenLink.push({
+      public_id: result.public_id,
+      url: result.secure_url
+    })
+  }
+  req.body.imagen = imagenLink
+  req.body.user = req.user.id;
+
+  const product = await producto.create(req.body);
   res.status(201).json({
     success: true,
     product
@@ -78,7 +100,7 @@ exports.createUpdateComments = catchAsyncErrors(async (req, res, next) => {
   if (isCommented) {
     product.comments.forEach(userComment => {
       if (userComment.nameCustomer === req.user.name) {
-          userComment.comment = comment,
+        userComment.comment = comment,
           userComment.rating = rating
       }
     })
@@ -147,6 +169,30 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   if (!product) {
     return next(new ErrorHandler("Product not found", 404))
   }
+  let imagen = []
+
+  if (typeof req.body.imagen == "string") {
+    imagen.push(req.body.imagen)
+  } else {
+    imagen = req.body.imagen
+  }
+  if (imagen !== undefined) {
+    // Remove product related images
+    for (let i = 0; i < product.imagen.lenght; i++) {
+      const result = await cloudinary.v2.uploader.destroy(product.images[i].public_id)
+    }
+    let imageLinks = []
+    for (let i = 0; i < imagen.lenght; i++) {
+      const result = await cloudinary.v2.uploader.upload(imagen[i], {
+        folder: "products"
+      });
+      imageLinks.push({
+        public_id: result.public_id,
+        url: result.secure_url
+      })
+    }
+    req.body.imagen = imageLinks
+  }
 
   // Validation 2: The product exists? --> YES --> Validate only new or updated attributes
   producto = await producto.findByIdAndUpdate(req.params.id, req.body, {
@@ -183,6 +229,17 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 })
 
 // =======================================================================================================
+
+// View list products --> Admin
+exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
+
+  const products = await producto.find()
+
+  res.status(200).json({
+      products
+  })
+
+})
 
 // View All Products - FETCH
 

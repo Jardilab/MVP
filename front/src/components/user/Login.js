@@ -26,7 +26,7 @@ export const Login = () => {
     }
     return (
         <Fragment>
-            {loading ? <i class="fa fa-refresh fa-spin fa-2x fa-fw"></i> : (
+            {loading ? <i className="fa fa-refresh fa-spin fa-2x fa-fw"></i> : (
                 <><MetaData title={"Sign In"} /><div className='row wrapper'>
                     <div className='col-10 col-lg-5'>
                         <form className='shadow-lg' onSubmit={submitHandler}>

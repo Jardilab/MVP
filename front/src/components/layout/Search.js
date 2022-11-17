@@ -19,26 +19,25 @@ export const Search = () => {
 
     return (
         <div className="container justify col-12 col-lg-12">
-        <form onSubmit={searchHandler}>
-            <div className="input-group">
-                <input
-                type="text"
-                id="search_field"
-                className="form-control text-center"
-                placeholder="Search product"
-                onChange={(e) => setKeyword(e.target.value)}
-                />
-
-                <div className="input-group-append">
-                    <button id="search_btn" className="btn">
-                        <i
-                            className="fa fa-search"
-                            aria-hidden="true"
-                        ></i>
-                    </button>
+            <form onSubmit={searchHandler}>
+                <div className="input-group">
+                    <input
+                        type="text"
+                        id="search_field"
+                        className="form-control text-center"
+                        placeholder="Search product"
+                        onChange={(e) => setKeyword(e.target.value)}
+                    />
+                    <div className="input-group-append">
+                        <button id="search_btn" className="btn">
+                            <i
+                                className="fa fa-search"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+                    </div>
                 </div>
-            </div>            
-        </form>
+            </form>
         </div>
     )
 }
