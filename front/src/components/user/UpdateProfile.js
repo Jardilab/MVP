@@ -72,7 +72,7 @@ export const UpdateProfile = () => {
             <div className="row wrapper">
                 <div className="col-12 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                        <h1 className="mt-2 mb-5">Update profile</h1>
+                        <h3 className="mt-2 mb-5">Update profile</h3>
 
                         <div className="form-group">
                             <label htmlFor="email_field">Name</label>

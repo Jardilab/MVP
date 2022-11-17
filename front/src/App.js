@@ -35,8 +35,8 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/myAccount" element={<Profile />} />
             <Route path="/myAccount/updateProfile" element={<UpdateProfile />} />
-            <Route path="/myAccount/updatePassword" element={<UpdatePassword />} />
-            <Route path="/password/forgotPassword" element={<ForgotPassword />} />
+            <Route path="/password/update" element={<UpdatePassword />} />
+            <Route path="/password/forgot" element={<ForgotPassword />} />
             <Route path="/resetPassword/:token" element={<NewPassword />} />
             <Route path="/dashboard" element={<Dashboard />}/>
           </Routes>

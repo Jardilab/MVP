@@ -34,7 +34,7 @@ export const ForgotPassword = () => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler}>
-                        <h3 className="mb-3 text-center">I forgot my password</h3>
+                        <h3 className="mb-3 text-center">Forgot my password</h3>
                         <div classNameName="form-group">
                             <label htmlFor="email_field">Registered email</label>
                             <input type="email" id="email_field" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)}

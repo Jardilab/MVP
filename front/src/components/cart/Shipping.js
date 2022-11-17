@@ -36,7 +36,7 @@ export const Shipping = () => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onClick={submitHandler}>
-                        <h1 className="mb-4">shippingInfo</h1>
+                        <h3 className="mb-4">shippingInfo</h3>
                         <div className="form-group">
                             <label htmlFor="address_field">Address</label>
                             <input

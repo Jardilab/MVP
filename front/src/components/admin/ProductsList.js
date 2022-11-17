@@ -72,7 +72,7 @@ export const ProductsList = () => {
                 </div>
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <h1 className="my-5">Registered Products</h1>
+                        <h3 className="my-5">Registered Products</h3>
 
                         {loading ? (
                             <i className="fa fa-refresh fa-spin fa-2x fa-fw"></i>

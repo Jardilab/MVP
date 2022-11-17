@@ -92,7 +92,7 @@ const NewProduct = () => {
                     <Fragment>
                         <div className="wrapper my-5">
                             <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                                <h1 className="mb-4">New Product</h1>
+                                <h3 className="mb-4">New Product</h3>
                                 <div className="form-group">
                                     <label htmlFor="name_field">Name</label>
                                     <input

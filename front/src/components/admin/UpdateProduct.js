@@ -110,7 +110,7 @@ export const UpdateProduct = () => {
                     <Fragment>
                         <div className="wrapper my-5">
                             <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                                <h1 className="mb-4">Update product</h1>
+                                <h3 className="mb-4">Update product</h3>
                                 <div className="form-group">
                                     <label htmlFor="name_field">Name</label>
                                     <input

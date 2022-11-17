@@ -28,13 +28,13 @@ export const Profile = () => {
                             <p>{user.email}</p>
 
                             <h4>Registered on: </h4>
-                            <p>{String(user.registrationDate).substring(0, 10)}</p>
+                            <p>{String(user.createAt).substring(0, 10)}</p>
 
-                            {/* {user.role !== 'admin' && (
-                                <Link to="/orders/me" className="btn btn-danger btn-block mt-5">
+                            {user.role !== 'admin' && (
+                                <Link to="/orders/historyOrders" className="btn btn-danger btn-block mt-5">
                                     My Orders
                                 </Link>
-                            )} */}
+                            )}
 
                             <Link to="/password/update" className="btn btn-primary btn-block mt-3">
                                 Change Password
