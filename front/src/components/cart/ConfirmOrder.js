@@ -9,14 +9,14 @@ export const ConfirmOrder = () => {
     const { cartItems, shippingInfo } = useSelector(state => state.cart)
     const { user } = useSelector(state => state.auth)
 
-    const itemsPrice = cartItems.reduce((acc, item) => acc + item.precio * item.quantity, 0)
+    const itemsPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
     const shippingPrice = itemsPrice > 125000 ? 0 : 12000
     const taxPrice = Number((0.19 * itemsPrice).toFixed(2))
     const totalPrice = (itemsPrice + shippingPrice + taxPrice).toFixed(2)
 
     const processToPayment = () => {
         const data = {
-            precioItems: itemsPrice.toFixed(2),
+            itemsPrice: itemsPrice.toFixed(2),
             shippingPrice,
             taxPrice ,
             totalPrice
@@ -26,14 +26,14 @@ export const ConfirmOrder = () => {
     }
     return (
         <Fragment>
-            <MetaData title={'Confirmar Orden'} />
+            <MetaData title={'Confirm Order'} />
             <CheckoutSteps shipping confirmOrder />
             <div className="row d-flex justify-content-between">
                 <div className="col-12 col-lg-8 mt-5 order-confirm">
                     <h3 className="mb-3">Shipment information</h3>
                     <p><b>Name:</b> {user && user.name}</p>
                     <p><b>Phone:</b> {shippingInfo.phone}</p>
-                    <p className="mb-4"><b>Address:</b> {`${shippingInfo.address}, ${shippingInfo.city} ${shippingInfo.departament}`}</p>
+                    <p className="mb-4"><b>Address:</b> {`${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.departament}`}</p>
                     <hr />
                     <h3 className="mt-4">Products added the shopping cart:</h3>
                     {cartItems.map(item => (

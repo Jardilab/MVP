@@ -52,7 +52,8 @@ export const ProductsList = () => {
                 actions: <Fragment>
                     <Link to={`/product/${product._id}`} className="btn btn-primary py-1 px-2">
                         <i className="fa fa-eye"></i>
-                    </Link><Link to="/" className="btn btn-warning py-1 px-2">
+                    </Link>
+                    <Link to="/updateProduct" className="btn btn-warning py-1 px-2">
                         <i class="fa fa-pencil"></i>
                     </Link>
                     <Link to="/" className="btn btn-danger py-1 px-2">
@@ -73,7 +74,6 @@ export const ProductsList = () => {
                 <div className="col-12 col-md-10">
                     <Fragment>
                         <h3 className="my-5">Registered Products</h3>
-
                         {loading ? (
                             <i className="fa fa-refresh fa-spin fa-2x fa-fw"></i>
                         ) : (

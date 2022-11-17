@@ -9,7 +9,7 @@ export const Profile = () => {
         <Fragment>
             {loading ? <i classname="fa fa-refresh fa-spin fa-2x fa-fw"></i> : (
                 <Fragment>
-                    <MetaData title={"My profile"} />
+                    <MetaData title={"My Profile"} />
                     <h3 className="mt-5 ml-5">My profile</h3>
                     <div className="row justify-content-around mt-5 user-info">
                         <div className="col-12 col-md-3">

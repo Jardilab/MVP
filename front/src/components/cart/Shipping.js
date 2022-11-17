@@ -31,7 +31,7 @@ export const Shipping = () => {
     }
     return (
         <Fragment>
-            <MetaData title={'shippingInfo'} />
+            <MetaData title={'ShippingInfo'} />
             <CheckoutSteps shipping />
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">

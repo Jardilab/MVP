@@ -11,7 +11,6 @@ const tokenSend = (user, statusCode, res) => {
         ),
         httpOnly: true
     }
-
     res.status(statusCode).cookie("token", token, tokenOptions).json({
         success: true,
         token,

@@ -86,19 +86,19 @@ export const ProductDetails = () => {
                 data-toggle="modal" data-target="#ratingModal">Write your review</button>
               <div className="alert alert-danger mt-5" type="alert">Login for write your review</div>
               {/* Message for write your review and score product */}
-              <div className="row mt-2 mb-5">
-                <div className="rating w-50">
-                  <div className="modal fade" id="ratingModal" tabIndex="-1" role="dialog"
+              <div className="row mt-2 mb-5 text-center">
+                <div className="rating w-50 text-center">
+                  <div className="modal fade text-center" id="ratingModal" tabIndex="-1" role="dialog"
                     aria-labelledby='ratingModalLabel' aria-hidden="true">
-                    <div className="modal-dialog" role="document">
-                      <div className="modal-content">
-                        <div className="modal-header">
-                          <h3 className="modal-title" id="ratingModalLabel">Send Review</h3>
+                    <div className="modal-dialog text-center" role="document">
+                      <div className="modal-content text-center">
+                        <div className="modal-header text-center">
+                          <h3 className="modal-title text-center" id="ratingModalLabel">Send Review</h3>
                           <button type="button" className='close' data-dismiss="modal" aria-label='Close'>
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <div className="modal-body">
+                        <div className="modal-body text-center">
                           <ul className="stars">
                             <li className="star"><i className="fa fa-star"></i></li>
                             <li className="star"><i className="fa fa-star"></i></li>

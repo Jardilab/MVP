@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import MetaData from '../layout/MetaData'
 import Sidebar from './Sidebar'
-
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearErrors, getProductDetails, updateProduct } from '../../actions/productActions'
@@ -98,10 +97,9 @@ export const UpdateProduct = () => {
             reader.readAsDataURL(file)
         })
     }
-
     return (
         <Fragment>
-            <MetaData title={'Update product'} />
+            <MetaData title={'Update Product'} />
             <div className="row">
                 <div className="col-12 col-md-2">
                     <Sidebar />
@@ -185,10 +183,10 @@ export const UpdateProduct = () => {
                                 <button
                                     id="login_button"
                                     type="submit"
-                                    className="btn btn-block py-3"
+                                    className="btn btn-block py-2"
                                     disabled={loading ? true : false}
                                 >
-                                    UPDATE
+                                    Update
                                 </button>
                             </form>
                         </div>

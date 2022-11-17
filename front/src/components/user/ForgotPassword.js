@@ -30,7 +30,7 @@ export const ForgotPassword = () => {
     }
     return (
         <Fragment>
-            <MetaData title={'Forget password'} />
+            <MetaData title={'Forget Password'} />
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler}>

@@ -75,8 +75,7 @@ export const Home = () => {
                             </span>
                           </div>
                           <p className="card-text">${products.price}</p>
-                          <Link
-                            to={`/product/${products._id}`}
+                          <Link to={`/product/${products._id}`}
                             id="view_btn"
                             className="btn btn-block"
                           >
