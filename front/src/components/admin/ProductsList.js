@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { MDBDataTable } from 'mdbreact';
-import MetaData from "./layout/MetaData";
+import MetaData from "../layout/MetaData";
 import Sidebar from './Sidebar';
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../actions/productActions";

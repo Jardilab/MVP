@@ -36,7 +36,7 @@ export const Shipping = () => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onClick={submitHandler}>
-                        <h3 className="mb-4">shippingInfo</h3>
+                        <h3 className="mb-4 text-center">Shipping information</h3>
                         <div className="form-group">
                             <label htmlFor="address_field">Address</label>
                             <input
@@ -49,7 +49,7 @@ export const Shipping = () => {
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="phone_field">Telefono</label>
+                            <label htmlFor="phone_field">Phone</label>
                             <input
                                 type="phone"
                                 id="phone_field"
@@ -60,7 +60,7 @@ export const Shipping = () => {
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="country_field">Departamento</label>
+                            <label htmlFor="country_field">Departament</label>
                             <select
                                 id="country_field"
                                 className="form-control"
@@ -75,7 +75,7 @@ export const Shipping = () => {
                                 ))}
                             </select>
                             <div className="form-group">
-                                <label htmlFor="city_field">Ciudad</label>
+                                <label htmlFor="city_field">City</label>
                                 <select
                                     id="city_field"
                                     className="form-control"
@@ -94,9 +94,9 @@ export const Shipping = () => {
                         <button
                             id="shipping_btn"
                             type="submit"
-                            className="btn btn-block py-3"
+                            className="btn btn-block py-2"
                         >
-                            CONTINUE
+                            Continue
                         </button>
                     </form>
                 </div>

@@ -37,9 +37,9 @@ const Cart = () => {
     return (
         <Fragment>
             <MetaData title={'My Shopping Cart'} />
-            {cartItems.length === 0 ? <h2 className="mt-5">Su carrito esta vacio</h2> : (
+            {cartItems.length === 0 ? <h3 className="mt-5">Shopping cart is empty.</h3> : (
                 <Fragment>
-                    <h2 className="mt-5">My Shopping Cart: <b>{cartItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} items</b></h2>
+                    <h3 className="mt-5">My Shopping Cart: <b>{cartItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} items</b></h3>
                     <div className="row d-flex justify-content-between">
                         <div className="col-12 col-lg-8">
                             {cartItems && cartItems.map(item => (
@@ -74,12 +74,12 @@ const Cart = () => {
                         </div>
                         <div className="col-12 col-lg-3 my-4">
                             <div id="order_summary">
-                                <h4>Total purchase</h4>
+                                <h3>Total purchase</h3>
                                 <hr />
                                 <p>Products:  <span className="order-summary-values">{cartItems.reduce((accumulator, item) => (accumulator+ Number(item.quantity)), 0)} (Units)</span></p>
                                 <p>Est. total: <span className="order-summary-values">${cartItems.reduce((accumulator, item) => accumulator + (item.quantity * item.price), 0).toFixed(2)}</span></p>
                                 <hr />
-                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkOutHandler}>To buy!</button>
+                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkOutHandler}>To buy</button>
                             </div>
                         </div>
                     </div>

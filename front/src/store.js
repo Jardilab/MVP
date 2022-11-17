@@ -1,9 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { productsReducer, productDetailsReducer, newProductReducer, productReducer  } from './reducer/productReducer';
+import { productsReducer, productDetailsReducer, newProductReducer, productReducer } from './reducer/productReducer';
 import { authReducer, userReducer, forgotPasswordReducer } from './reducer/userReducer';
 import { cartReducer } from './reducer/cartReducer';
+import { newOrderReducer } from './reducer/orderReducer';
 
 const reducer = combineReducers({
   products: productsReducer,
@@ -14,9 +15,19 @@ const reducer = combineReducers({
   forgotPassword: forgotPasswordReducer,
   newProduct: newProductReducer,
   product: productReducer,
+  newOrder: newOrderReducer,
 });
 
-let initialState = {}
+let initialState = {
+  cart: {
+    cartItems: localStorage.getItem('cartItems')
+      ? JSON.parse(localStorage.getItem('cartItems'))
+      : [],
+    shippingInfo: localStorage.getItem('shippingInfo')
+      ? JSON.parse(localStorage.getItem('shippingInfo'))
+      : {}
+  }
+}
 
 const middleware = [thunk]
 const store = createStore(

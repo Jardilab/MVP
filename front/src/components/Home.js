@@ -40,7 +40,6 @@ export const Home = () => {
           <Fragment>
             <MetaData title="Catch Me If You Can"></MetaData>
             <h3 id="header_products">Latest products </h3>
-
             <section id="products" className="container mt-5">
               <div className="row">
                 {products &&
@@ -56,11 +55,11 @@ export const Home = () => {
                           alt={products.imagen[0].public_id}
                         ></img>
                         <div className="card-body d-flex flex-column text-center">
-                          <h3 id="title_product">
+                          <h4 id="title_product">
                             <Link to={`/product/${products._id}`}>
                               {products.name}
                             </Link>
-                          </h3>
+                          </h4>
                           <div className="rating mt-auto">
                             <div className="rating-outer">
                               <div

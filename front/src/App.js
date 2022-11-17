@@ -7,6 +7,7 @@ import { ProductDetails } from './components/products/ProductDetails';
 //Router brought from react-router-dom (different from express)
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from './components/admin/Dashboard';
+import ProductsList from './components/admin/ProductsList';
 import { Login } from './components/user/Login';
 import { Register } from './components/user/Register';
 import { loadUser } from './actions/userActions';
@@ -16,6 +17,14 @@ import { UpdateProfile } from './components/user/UpdateProfile';
 import { UpdatePassword } from './components/user/UpdatePassword';
 import { ForgotPassword } from './components/user/ForgotPassword';
 import { NewPassword } from './components/user/NewPassword';
+import NewProduct from './components/admin/NewProduct';
+import Cart from './components/cart/Cart';
+import ProtectedRoute from './routes/ProtectedRoute';
+import { UpdateProduct } from './components/admin/UpdateProduct';
+import { Shipping } from './components/cart/Shipping';
+import { ConfirmOrder } from './components/cart/ConfirmOrder';
+import { Payment } from './components/cart/Payment';
+import { Success } from './components/cart/Success'
 
 function App() {
   useEffect(() => {
@@ -30,7 +39,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Home" element={<Home />} />
             <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/productList" element={<ProductsList />} />
+            <Route path="/nuevoProducto" element={<NewProduct />} />
             <Route path="/search/:keyword" element={<Home />} />
+            <Route path="/shoppingCart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/myAccount" element={<Profile />} />
@@ -38,7 +50,15 @@ function App() {
             <Route path="/password/update" element={<UpdatePassword />} />
             <Route path="/password/forgot" element={<ForgotPassword />} />
             <Route path="/resetPassword/:token" element={<NewPassword />} />
-            <Route path="/dashboard" element={<Dashboard />}/>
+            <Route path="/dashboard" element={<Dashboard />} />
+
+            {/* Route sacurity*/}
+            <Route path="/dashboard" element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
+            <Route path="/updateProduct/:id" element={<ProtectedRoute isAdmin={true}><UpdateProduct /></ProtectedRoute>} />
+            <Route path="/shipping" element={<ProtectedRoute><Shipping /></ProtectedRoute>} />
+            <Route path="/order/confirm" element={<ProtectedRoute><ConfirmOrder /></ProtectedRoute>} />
+            <Route path="/payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
+            <Route path="/success" element={<ProtectedRoute><Success /></ProtectedRoute>} />
           </Routes>
         </div>
         <Footer />

@@ -9,8 +9,8 @@ export const Success = () => {
             <div className="row justify-content-center">
                 <div className="col-6 mt-5 text-center">
                     <img className="my-5 img-fluid d-block mx-auto" src="/images/orderOk.jpeg" alt="Order successful" width="200" height="200" />
-                    <h2>Your order has been successfully registered</h2>
-                    <Link to="/">Return home</Link>
+                    <h3>Order successfully registered</h3>
+                    <Link to="/">Return E-Commerce</Link>
                 </div>
             </div>
         </Fragment>

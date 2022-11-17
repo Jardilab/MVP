@@ -71,7 +71,7 @@ export const Payment = () => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler} >
-                        <h3 className="mb-4">Card data</h3>
+                        <h3 className="mb-4 text-center">Card data</h3>
                         <div className="form-group">
                             <label htmlFor="card_num_field">Card data</label>
                             <input
@@ -99,7 +99,7 @@ export const Payment = () => {
                         <button
                             id="pay_btn"
                             type="submit"
-                            className="btn btn-block py-3"
+                            className="btn btn-block py-2"
                         >
                             Pay ${` - ${orderInfo && orderInfo.totalPrice}`}
                         </button>

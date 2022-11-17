@@ -34,7 +34,7 @@ const Header = () => {
         <div className="col-12 col-md-4 mt-2 mt-md-0">
           <Search />
           <div className="col-12 col-md-4 mt-4 mt-md-0 text-center">
-            <Link to="/carrito"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
+            <Link to="/shoppingCart"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
               <span className="ml-1" id="cart_count">{cartItems.length}</span></Link>
             {user ? (
               <div className="ml-4 dropdown d-inline">
